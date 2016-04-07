@@ -37,6 +37,7 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
+  monk: require("../assets/aethelstan4.gif"),
   city: require("../assets/city.jpg"),
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
@@ -46,34 +47,33 @@ const images = {
 preloader(images);
 
 const theme = createTheme({
-  primary: "#ff4081"
+  primary: "#3cf",
+  white: "#fff"
 });
 
 export default class Presentation extends React.Component {
-  render() {
+  render () {
     return (
       <Spectacle theme={theme}>
         <Deck transition={["zoom", "slide"]} transitionDuration={500}>
           <Slide transition={["zoom"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1} textColor="black">
-              Spectacle
+              Functional Programming 101
             </Heading>
             <Heading size={1} fit caps>
-              A ReactJS Presentation Library
+              Higher Order Functions
             </Heading>
-            <Heading size={1} fit caps textColor="black">
-              Where You Can Write Your Decks In JSX
-            </Heading>
-            <Link href="https://github.com/FormidableLabs/spectacle">
-              <Text bold caps textColor="tertiary">View on Github</Text>
+            <Link href="https://github.com/alanrsoares">
+              <Text textSize="1.5em" margin="20px 0px 0px" bold>@alanrsoares</Text>
             </Link>
-            <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
           </Slide>
           <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
-            <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
-            <Heading size={2} caps fit textColor="primary" textFont="primary">
-              Wait what?
+            <Image src={images.monk.replace("/", "")} margin="0px auto 40px" height="341px"/>
+            <Heading size={5} caps  textColor="primary" textFont="primary">
+              "The Functional Programmer sounds rather like a medieval monk,
+              denying himself the pleasures of life in the hope that it will make him virtuous"
             </Heading>
+            <Text textColor="white" textSize="1.5em" margin="20px 0px 0px" bold>Hughes, John</Text>
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <CodePane
