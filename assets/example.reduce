@@ -1,0 +1,6 @@
+// this is what a reduce implementation looks like
+const reduce = curry((reducer, acc, [x, ...xs]) =>
+  typeof x === 'undefined'
+    ? acc
+    : reduce(reducer, reducer(acc, x), xs)
+)

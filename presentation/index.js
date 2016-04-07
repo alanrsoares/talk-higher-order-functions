@@ -35,7 +35,8 @@ require("spectacle/lib/themes/default/index.css");
 const images = {
   monk: require("../assets/aethelstan4.gif"),
   monkFinal: require("../assets/no_closer_to_the_truth.gif"),
-  city: require("../assets/city.jpg")
+  city: require("../assets/city.jpg"),
+  state_meme: require("../assets/state_meme.jpg"),
 };
 
 preloader(images);
@@ -92,7 +93,7 @@ export default class Presentation extends React.Component {
               ["Write Functions", "In terms of each other", "by"]
                 .map((word, i) => (
                   <Appear>
-                    <Heading size={i+1} caps textFont="primary" textColor={ odd(i) ? "tertiary" : "secondary" }>
+                    <Heading size={i + 1} caps textFont="primary" textColor={ odd(i) ? "tertiary" : "secondary" }>
                       {word}
                     </Heading>
                   </Appear>
@@ -114,6 +115,11 @@ export default class Presentation extends React.Component {
             <CodePane
               lang="jsx"
               source={require("raw!../assets/example.curry")}
+              margin="20px auto"
+            />
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/example.compose")}
               margin="20px auto"
             />
           </Slide>

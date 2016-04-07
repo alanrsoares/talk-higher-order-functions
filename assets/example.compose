@@ -1,0 +1,2 @@
+// composes any number of functions into a pipeline
+const compose = (...fs) => init => reduce((acc, f) => f(acc), init, fs.reverse())
