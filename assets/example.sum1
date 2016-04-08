@@ -1,0 +1,8 @@
+function sum (numbers) {
+  const length = numbers.length
+  let accumulator = 0
+  for (let i = 0; i < length; i++) {
+    accumulator += numbers[i]
+  }
+  return accumulator
+}

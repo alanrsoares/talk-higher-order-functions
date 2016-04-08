@@ -1,0 +1,5 @@
+// readFile :: Filename -> Either String (Task Error String)
+// httpPost :: String -> String -> Task Error JSON
+
+//  upload :: String -> Either String (Task Error JSON)
+const upload = compose(map(chain(httpPost('/uploads'))), readFile)
